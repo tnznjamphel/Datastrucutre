@@ -16,6 +16,7 @@ class Llist{
 		this->length=0;
 		this->head=NULL;
 	}
+	//list insertion
 	void insert(int data){
 		Node *node=new Node();
 		Node *temp;
@@ -36,8 +37,9 @@ class Llist{
     	this->length++;
     	//delete temp;
 	}
+	//list trqversal
 	void traversal(){
-		Node* temp;
+		Node *temp;
 		temp=head;
 		if(head==NULL)
 			cout<<"list is empty";
@@ -50,6 +52,26 @@ class Llist{
 		}
 		//delete temp;
 	}
+    void reverse() 
+    { 
+        // Initialize current, previous and 
+        // next pointers 
+        Node* current = head; 
+        Node *prev = NULL, *next = NULL; 
+  
+        while (current != NULL) { 
+            // Store next 
+            next = current->next; 
+  
+            // Reverse current node's pointer 
+            current->next = prev; 
+  
+            // Move pointers one position ahead. 
+            prev = current; 
+            current = next; 
+        } 
+        head = prev; 
+    } 
 };
 int main()
 {
@@ -58,7 +80,8 @@ int main()
     list1.insert(10);
     list1.insert(20);
     list1.insert(30);
-    
+    //list reverse
+    list1.reverse();
     list1.traversal();
     return 0;
 }
