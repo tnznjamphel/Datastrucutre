@@ -23,7 +23,7 @@ class Llist{
 		if(head==NULL){
 			head=node;
 			node->next=NULL;
-			cout<<"headvalue is changed to "<<head->data;
+			//cout<<"headvalue is changed to "<<head->data;
 		}
 		else{
 			temp=head;
@@ -32,9 +32,9 @@ class Llist{
 			}
 			temp->next=node;
 		}
-		cout<<"check node values:"<<node->data<<" ";
+		//cout<<"check node values:"<<node->data<<" ";
     	this->length++;
-    	delete temp;
+    	//delete temp;
 	}
 	void traversal(){
 		Node* temp;
@@ -42,17 +42,19 @@ class Llist{
 		if(head==NULL)
 			cout<<"list is empty";
 		else{
+            cout<<"traversal of the singly linked list: ";
 			while(temp!=NULL){
 				cout<<temp->data<<" ";
 				temp=temp->next;
 		}
 		}
-		delete temp;
+		//delete temp;
 	}
 };
 int main()
 {
     Llist list1 = Llist();
+    //insertion of list
     list1.insert(10);
     list1.insert(20);
     list1.insert(30);
